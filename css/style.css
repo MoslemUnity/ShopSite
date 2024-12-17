@@ -1,0 +1,380 @@
+@font-face {
+    font-family: "B Homa";
+    src: url("../fonts/BHOMA.woff2") format("woff2");
+    src: url("../fonts/BHOMA.woff") format("woff");
+    src: url("../fonts/BHOMA.otf") format("otf");
+    src: url("../fonts/BHOMA.eot") format("eot");
+    src: url("../fonts/BHoma.ttf") format("ttf");
+}
+
+@font-face {
+    font-family: "Tanha";
+    src: url("../fonts/Tanha.woff") format("woff");
+    src: url("../fonts/Tanha.ttf") format("ttf");
+}
+
+* {
+    font-family: "B Homa", sans-serif;
+    font-size: 18px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* بک‌گراند صفحه */
+.background {
+    background-image: url("../images/laptop-with-shop-cart-background-free-photo\ \(1\).jpg");
+    background-size: cover;
+    background-position: center;
+    height: 700px;
+    position: relative;
+    border-radius: 20px; /* گوشه‌های گرد */
+    overflow: hidden; /* برای جلوگیری از بیرون زدن تصویر */
+}
+
+/* کاور */
+.cover {
+    position: absolute;
+    top: 50%; /* تغییر موقعیت کاور */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.cover h1 {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+/* موقعیت‌دهی به دکمه و جستجو بار */
+.search-bar {
+    position: absolute;
+    top: 80%; /* موقعیت‌دهی به پایین‌تر از کاور */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #45adca; /* آبی کمرنگ برای بک‌گراند */
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* سایه ملایم‌تر */
+
+    flex-direction: row-reverse; /* تغییر ترتیب آیتم‌ها (دکمه چپ و ورودی راست) */
+}
+
+/* دکمه جستجو */
+.search-bar button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #2c3e50; /* رنگ طوسی تیره برای دکمه */
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* تغییر رنگ دکمه در حالت هاور */
+.search-bar button:hover {
+    background-color: #1a242f; /* تغییر رنگ دکمه به طوسی تیره‌تر در هاور */
+}
+
+/* استایل برای ورودی جستجو */
+.search-bar input {
+    padding: 10px;
+    font-size: 16px;
+    text-align: right;
+    border: none;
+    border-radius: 5px;
+    margin-left: 10px;
+    width: 250px;
+    outline: none; /* حذف حاشیه در حالت فوکوس */
+}
+
+.search-bar button:hover {
+    background-color: white; /* تغییر رنگ در حالت هاور */
+    color: black;
+}
+
+/* منوی ناوبری */
+nav {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background-color: rgba(44, 62, 80, 0.7); /* رنگ طوسی تیره برای بک‌گراند منو */
+    padding: 10px 0;
+    text-align: center;
+    display: flex;
+    justify-content: space-between; /* چیدمان افقی با فاصله بین آیکون همبرگر و لینک‌ها */
+    align-items: center; /* عمودی وسط‌چین کردن آیتم‌ها */
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/* آیکون منو برگر */
+.menu-icon {
+    display: none; /* پنهان کردن آیکون در حالت دسکتاپ */
+    flex-direction: column;
+    width: 30px;
+    height: 25px;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    position: absolute; /* استفاده از position برای جابجایی آیکون */
+    right: 20px; /* فاصله از سمت راست */
+    top: 20px; /* فاصله از بالای صفحه */
+}
+
+.menu-icon .bar {
+    width: 30px;
+    height: 4px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+/* لینک‌های منو */
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 20px;
+    font-size: 18px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    border-bottom: 2px solid white;
+    transform: scale(1.1);
+    color: #ecf0f1; /* رنگ سفید روشن برای متن لینک در هاور */
+    text-decoration: none;
+}
+
+/* Media Queries برای صفحه‌های کوچک */
+@media (max-width: 768px) {
+    /* تغییر موقعیت و اندازه کاور */
+    .cover {
+        top: 30%; /* پایین‌تر بردن کاور */
+        left: 50%;
+        transform: translate(-50%, 0);
+        font-size: 40px; /* کوچک‌تر شدن فونت */
+        padding: 15px;
+    }
+
+    /* تغییر در سرچ بار */
+    .search-bar {
+        width: 50%; /* عرض بار جستجو در موبایل */
+        top: 80%; /* موقعیت بالاتر */
+        left: 50%;
+        transform: translate(-50%, -50%);
+        flex-direction: row-reverse; /* چینش افقی برای ورودی و دکمه */
+        padding: 8px;
+    }
+
+    /* تغییر اندازه دکمه جستجو */
+    .search-bar button {
+        width: auto; /* اندازه دکمه به اندازه محتوای آن */
+        margin-left: 10px; /* فاصله از کادر ورودی */
+    }
+
+    /* ورودی جستجو */
+    .search-bar input {
+        width: 100%; /* ورودی جستجو به اندازه کامل عرض بار جستجو */
+    }
+
+    /* پنهان کردن لینک‌های منو در صفحه‌های کوچک */
+    nav a {
+        display: none;
+    }
+
+    /* نمایش آیکون همبرگر در سمت راست */
+    .menu-icon {
+        display: flex;
+    }
+
+    /* فعال کردن نمایش منو در صورت باز شدن */
+    nav.active #menu-items {
+        display: block;
+    }
+
+    #menu-items {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    #menu-items a {
+        display: block;
+        margin: 10px 0;
+    }
+}
+/* استایل برای بخش محصولات */
+.products {
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+/* استایل برای هر محصول */
+.product {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    width: 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    position: relative; /* برای ایجاد فضای بیشتر در افکت‌ها */
+}
+
+/* تغییرات در تصویر محصول */
+.product img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease; /* انیمیشن برای بزرگ شدن تصویر */
+}
+
+/* تغییرات در عنوان محصول */
+.product h2 {
+    font-size: 20px;
+    margin-top: 10px;
+    color: #333;
+    transition: color 0.3s ease; /* انیمیشن برای تغییر رنگ */
+}
+
+/* تغییرات در توضیحات محصول */
+.product p {
+    font-size: 14px;
+    color: #666;
+    margin-top: 10px;
+    transition: color 0.3s ease;
+}
+
+/* دکمه خرید */
+.product button {
+    background-color: #45adca;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+/* تغییرات در هاور دکمه */
+.product button:hover {
+    background-color: #2c3e50;
+    color: #fff;
+    transform: scale(1.1); /* بزرگ شدن دکمه */
+}
+
+/* افکت هاور برای محصول */
+.product:hover {
+    transform: scale(1.05); /* بزرگ شدن محصول */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* سایه تیره‌تر */
+}
+
+.product:hover img {
+    transform: scale(1.1); /* بزرگ شدن تصویر محصول */
+}
+
+.product:hover h2, .product:hover p {
+    color: #45adca; /* تغییر رنگ عنوان و توضیحات */
+}
+
+/* برای ریسپانسیو شدن */
+@media (max-width: 768px) {
+    .product-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product {
+        width: 90%; /* برای موبایل محصولات به صورت تمام عرض نمایش داده می‌شود */
+        margin-bottom: 20px;
+    }
+}
+/* استایل برای فوتر */
+.footer {
+    background-color: #333; /* رنگ پس‌زمینه فوتر */
+    color: #fff; /* رنگ متن فوتر */
+    padding: 20px 0; /* فاصله داخلی */
+    text-align: center; /* متن در وسط قرار گیرد */
+    margin-top: 40px; /* فاصله از محتوای اصلی */
+}
+
+/* استایل برای محتوای فوتر */
+.footer-content {
+    max-width: 1200px; /* عرض حداکثر برای فوتر */
+    margin: 0 auto; /* تراز وسط */
+}
+
+/* استایل برای لوگو در فوتر */
+.footer-logo {
+    width: 150px; /* عرض لوگو */
+    margin-bottom: 20px; /* فاصله از لینک‌های اجتماعی */
+    border-radius: 10px; /* گوشه‌های گرد */
+}
+
+/* استایل برای لینک‌های اجتماعی */
+.social-links {
+    margin-top: 10px; /* فاصله از لوگو */
+}
+
+.social-icon img {
+    width: 30px; /* اندازه آیکن‌ها */
+    height: 30px; /* ارتفاع آیکن‌ها */
+    margin: 0 15px; /* فاصله بین آیکن‌ها */
+    transition: transform 0.3s ease;
+}
+
+/* تغییر اندازه آیکن‌ها در هاور */
+.social-icon img:hover {
+    transform: scale(1.2); /* بزرگ‌تر شدن آیکن در هاور */
+}
+
+/* Media Queries برای صفحه‌های کوچک */
+@media (max-width: 768px) {
+    /* استایل برای موبایل */
+    .footer-content {
+        padding: 0 20px; /* فاصله داخلی کمتر در موبایل */
+    }
+
+    .social-links {
+        display: flex; /* نمایش لینک‌ها به صورت افقی */
+        justify-content: center; /* وسط‌چین کردن لینک‌ها */
+        margin-top: 15px;
+    }
+
+    .social-icon img {
+        margin: 0 10px; /* کاهش فاصله بین آیکن‌ها */
+        width: 25px; /* کاهش اندازه آیکن‌ها */
+        height: 25px; /* کاهش ارتفاع آیکن‌ها */
+    }
+}
+
+@media (max-width: 480px) {
+    /* استایل برای صفحه‌های خیلی کوچک مثل موبایل‌ها */
+    .social-icon img {
+        width: 20px; /* کاهش بیشتر اندازه آیکن‌ها */
+        height: 20px;
+    }
+}
+
+
